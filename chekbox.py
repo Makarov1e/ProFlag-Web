@@ -1,7 +1,6 @@
 import tkinter as tk
 import sqlite3
 
-# Устанавливаем соединение с базой данных SQLite
 connection = sqlite3.connect('users.db')
 cursor = connection.cursor()
 
@@ -13,7 +12,7 @@ checkbox_vars = []  # Список переменных для состояни�
 
 
 def submit_order_number():
-    order_number = int(entry.get())  # Преобразуем введенное значение в строку
+    order_number = int(entry.get())
     try:
         cursor.execute("INSERT INTO orderss (order_number, manager, calender, printer, cuter, seamstresses) VALUES (?, ?, ?, ?, ?, ?)",
                        (order_number, checkbox_vars[0].get(), checkbox_vars[1].get(), checkbox_vars[2].get(), checkbox_vars[3].get(), checkbox_vars[4].get()))
@@ -50,20 +49,16 @@ def clear_fields():
 def close_connection():
     connection.close()
 
-# Создаем главное окно
 root = tk.Tk()
 root.title("Введите номер заказа")
 root.geometry('200x270')
 
-# Создаем метку с пояснением
 label = tk.Label(root, text="Введите номер заказа:")
 label.pack()
 
-# Создаем поле для ввода номера заказа
 entry = tk.Entry(root)
 entry.pack()
 
-# Создаем чекбоксы
 checkboxes = ["менеджер", "каландер", "печать", "резщики", "швеи"]  # Замените на ваши варианты
 for checkbox_text in checkboxes:
     var = tk.IntVar()
@@ -71,15 +66,12 @@ for checkbox_text in checkboxes:
     checkbox = tk.Checkbutton(root, text=checkbox_text, variable=var)
     checkbox.pack()
 
-# Создаем кнопку для подтверждения ввода
 submit_button = tk.Button(root, text="Подтвердить", command=submit_order_number)
 submit_button.pack()
 
-# Создаем кнопку для показа статуса заказа
 status_button = tk.Button(root, text="Статус", command=show_status)
 status_button.pack()
 
-# Запускаем главный цикл обработки событий
 root.mainloop()
 
 
