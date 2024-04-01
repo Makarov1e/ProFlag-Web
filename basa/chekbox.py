@@ -61,7 +61,7 @@ label.pack()
 entry = tk.Entry(root)
 entry.pack()
 
-checkboxes = ["менеджер", "каландер", "печать", "резщики", "швеи"]  # Замените на ваши варианты
+checkboxes = ["менеджер", "каландер", "печать", "резщики", "швеи"] 
 for checkbox_text in checkboxes:
     var = tk.IntVar()
     checkbox_vars.append(var)
