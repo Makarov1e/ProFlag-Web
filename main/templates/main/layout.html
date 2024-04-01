@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDown menu</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <!--<img src="{% static 'main/img/logopf.png' %}" alt="logo">-->
+</head>
+<body>
+
+<header>
+        <a href="#" class="logo">ProFlag</a>
+        <nav>
+            <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Tracking &bigtriangledown; </a>
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript &bigtriangledown; </a>
+                        <ul>
+                            <li><a href="#">123</a></li>
+                            <li><a href="#">228</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+</header>
+    <!--<main>
+        {% block content %}
+        {% endblock %}
+    </main>-->
+</body>
+</html>
