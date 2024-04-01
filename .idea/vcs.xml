@@ -3,6 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ProFlag-Web" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/basa/ProFlag-Web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ProFlag-Web/main/basa/ProFlag-Web" vcs="Git" />
   </component>
 </project>
