@@ -9,3 +9,16 @@ class Articles(models.Model):
 
     def __str__(self):
         return self.title
+
+# models.py
+
+
+class Order(models.Model):
+    order_number = models.CharField('Номер заказа', max_length=100)
+    customer_name = models.CharField('Заказчик', max_length=100)
+    product_name = models.CharField('Продукт', max_length=100)
+    order_date = models.DateTimeField('Дата публикации')
+    status = models.CharField('Статус', max_length=50)
+
+    def __str__(self):
+        return self.order_number

@@ -1,4 +1,6 @@
-/* Основные стили */
+/* main.css */
+
+/* Общие стили */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +27,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 8%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 header .logo {
@@ -38,9 +42,12 @@ header .logo:hover {
     transform: scale(1.2);
 }
 
+header nav ul {
+    display: flex;
+}
+
 header nav ul li {
     position: relative;
-    float: left;
 }
 
 header nav ul li a {
@@ -83,26 +90,28 @@ nav ul li ul li ul {
     top: 0;
 }
 
-nav ul li:hover > ul {
-    display: initial;
-}
-
-/* Стили контейнера */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: calc(100vh - 60px); /* Высота без учета header */
+    padding-top: 60px;
 }
 
 .search-container {
     text-align: center;
-    margin-bottom: 20px;
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.search-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
 .search-input {
@@ -121,8 +130,6 @@ nav ul li:hover > ul {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    text-decoration: none;
-    display: inline-block;
     color: white;
 }
 
@@ -130,16 +137,27 @@ nav ul li:hover > ul {
     background-color: #0056b3;
 }
 
+/* Стили для результатов поиска */
 .order-details {
     text-align: left;
-    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .order-details h2 {
     margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
 }
 
 .order-details p {
-    font-size: 16px;
     margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.order-details p strong {
+    color: #333;
 }
