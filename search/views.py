@@ -21,9 +21,9 @@ def search_home(request):
 #
 #     return render(request, 'track_order.html', {'form': form, 'order': order})
 
-# views.py
+
 from django.shortcuts import render, get_object_or_404
-from .models import Order
+
 from .forms import OrderSearchForm
 
 def track_order(request):

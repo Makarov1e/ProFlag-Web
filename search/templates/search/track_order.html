@@ -10,43 +10,30 @@
         <a href="/" class="logo">ProFlag</a>
         <nav>
             <ul>
-                <li><a href="/login">Account</a></li>
-                <li>
-                    <a href="#">Tracking</a>
-                    <ul>
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li>
-                            <a href="#">JavaScript</a>
-                            <ul>
-                                <li><a href="#">123</a></li>
-                                <li><a href="#">228</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/login">Аккаунт</a></li>
+                <li><a href="/search">Отслеживание</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
             </ul>
         </nav>
     </header>
     <div class="container">
         <div class="search-container">
-            <h1>Track Your Order</h1>
+            <h1>Отследить Ваш заказ</h1>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="search-button">Search</button>
+                <input type="text" name="order_number" class="search-input" placeholder="Введите номер заказа" value="{{ request.POST.order_number }}" />
+                <button type="submit" class="search-button">Поиск</button>
             </form>
 
             {% if order %}
                 <div class="order-details">
-                    <h2>Order Details</h2>
-                    <p><strong>Order Number:</strong> {{ order.order_number }}</p>
-                    <p><strong>Customer Name:</strong> {{ order.customer_name }}</p>
-                    <p><strong>Product Name:</strong> {{ order.product_name }}</p>
-                    <p><strong>Order Date:</strong> {{ order.order_date }}</p>
-                    <p><strong>Status:</strong> {{ order.status }}</p>
+                    <h2>Детали заказа</h2>
+                    <p><strong>Номер заказа:</strong> {{ order.order_number }}</p>
+                    <p><strong>Имя Заказчика:</strong> {{ order.customer_name }}</p>
+                    <p><strong>Название товара:</strong> {{ order.product_name }}</p>
+                    <p><strong>Дата заказа:</strong> {{ order.order_date }}</p>
+                    <p><strong>Статус заказа:</strong> {{ order.status }}</p>
                 </div>
             {% elif form.is_bound %}
                 <p class="error-message">No order found with that number.</p>
