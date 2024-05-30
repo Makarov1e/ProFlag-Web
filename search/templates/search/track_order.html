@@ -10,12 +10,20 @@
         <a href="/" class="logo">ProFlag</a>
         <nav>
             <ul>
-                <li><a href="/login">Аккаунт</a></li>
+                <li><a href="/accounts/profile">Аккаунт</a></li>
                 <li><a href="/search">Отслеживание</a></li>
                 <li><a href="#">О нас</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
         </nav>
+
+        <div>
+            {% if user.is_authenticated %}
+                <p> Вы вошли как {{ user.get_username }} </p>
+            {% else %}
+                <a href="/accounts/login">Войти</a> 
+            {% endif %}
+        </div>
     </header>
     <div class="container">
         <div class="search-container">
