@@ -1,122 +1,196 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-*{
-    border: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
 
 body {
+    background: #f9f9f9;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: 60px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+header .logo:hover {
+    color: #0056b3;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+header nav ul li a {
+    color: #333;
+    font-size: 16px;
+    padding: 1em;
+    display: block;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    background: rgb(65, 65, 65);
+    color: white;
+    border-color: rgb(65, 65, 65);
+}
+
+header nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    background: white;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+header nav ul li ul li {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header nav ul li ul li ul {
+    left: 180px;
+    top: 0;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
     min-height: 100vh;
-    background: url(../img/img.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* background-position-y: 0px;  */
-
 }
 
-.wlapper {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,.2);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    color: white;
-    border-radius: 10px;
-    padding: 30px 40px;
-}
-
-.wlapper h1{
-    font-size: 36px;
+.login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     text-align: center;
 }
 
-.wlapper .input-box{
+.login-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.input-box {
     position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
+    margin-bottom: 20px;
 }
 
 .input-box input {
     width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(255,255,255,.2);
-    border-radius: 40px;
+    padding: 10px;
     font-size: 1em;
-    color: white;
-    padding: 20px 45px 20px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
 }
 
-.input-box input::placeholder{
-    color: white;
-}
-
-.input-box i{
+.input-box i {
     position: absolute;
-    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
+    right: 10px;
+    color: #ccc;
+    font-size: 1.2em;
 }
 
-.wlapper .remember-forgot {
+.remember-forgot {
     display: flex;
     justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.remember-forgot label input{
-    accent-color: white;
-    margin-right: 3px;
-
+.remember-forgot label {
+    display: flex;
+    align-items: center;
 }
 
+.remember-forgot label input {
+    margin-right: 5px;
+}
 
-.remember-forgot a{
-    color: white;
+.remember-forgot a {
+    color: #007bff;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-.remember-forgot a:hover{
-    text-decoration: underline;
+.remember-forgot a:hover {
+    color: #0056b3;
 }
 
-.wlapper .btn{
+.btn {
     width: 100%;
-    height: 45px;
-    background: white;
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background: #007bff;
     border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
+    transition: 0.3s;
 }
 
-.wlapper .register-link{
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
+.btn:hover {
+    background: #0056b3;
 }
 
+.register-link {
+    margin-top: 20px;
+}
 
-.register-link p a{
-    color: white;
+.register-link p {
+    font-size: 1em;
+}
+
+.register-link a {
+    color: #007bff;
     text-decoration: none;
-    font-weight: 600;
+    transition: 0.3s;
 }
 
-.register-link p a:hover{
-    text-decoration: underline;
+.register-link a:hover {
+    color: #0056b3;
 }

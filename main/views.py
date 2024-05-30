@@ -10,7 +10,7 @@ def about(request):
 def search(request):
     return render(request, 'main/search.html')
 
-def login(request):
-    return render(request, 'main/login.html')
+def user(request):
+    return render(request, 'main/user.html')
 
 

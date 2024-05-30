@@ -8,8 +8,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('search.urls')),
     path('search/', include('search.urls')),
-    path('login/', include('login.urls'))
+    path('about/', include('main.urls')),
+    path('contact/', include('contact.urls')),
+    path('user/', include('user.urls')),
+    path('login/', include('main.urls'))
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 
