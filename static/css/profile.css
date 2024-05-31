@@ -1,0 +1,178 @@
+/* profile.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: #f9f9f9;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: 60px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+header .logo:hover {
+    color: #0056b3;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+header nav ul li a {
+    color: #333;
+    font-size: 16px;
+    padding: 1em;
+    display: block;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    background: rgb(65, 65, 65);
+    color: white;
+    border-color: rgb(65, 65, 65);
+}
+
+header nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    background: white;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+header nav ul li ul li {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header nav ul li ul li ul {
+    left: 180px;
+    top: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+.profile-section {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.profile-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.profile-section form {
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ccc;
+}
+
+.btn {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.account-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 0;
+    font-size: 16px;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}

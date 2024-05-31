@@ -1,60 +1,68 @@
- *{
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: sans-serif;
-     list-style: none;
-     text-decoration: none;
- }
+/* main.css */
 
- body {
-     height: 100vh;
-     background: blue;
-     background-size: cover;
-     background-position: center;
- }
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
 
- header {
-     position: fixed;
-     top: 0;
-     left: 0;
-     right: 0;
-     background: white ;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 0 8%;
+body {
+    height: 100vh;
+    background: rgb(255, 207, 70);
+    background-size: cover;
+    background-position: center;
+}
 
- }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
+header .logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+    transition: 0.5s;
+}
 
- header .logo {
-         font-size: 20px;
-         font-weight: 900;
-         color: #000;
-         transition: .5s;
- }
-
-
- header .logo:hover {
+header .logo:hover {
     transform: scale(1.2);
- }
+}
 
- header nav ul li {
-     position: relative;
-     float: left;
- }
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    position: relative;
+}
 
 header nav ul li a {
-    padding: 15px;
+    padding: 1em;
     color: black;
-    font-size: 16px;
+    font-size: 1em;
     display: block;
+    border: 2px solid transparent;
+    transition: 0.3s;
 }
 
 header nav ul li a:hover {
-    background: black;
+    background: rgb(65, 65, 65);
     color: white;
+    border-color: rgb(65, 65, 65);
 }
 
 nav ul li ul {
@@ -65,9 +73,16 @@ nav ul li ul {
     display: none;
 }
 
+nav ul li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
 nav ul li ul li {
     width: 100%;
-    border: 1px solid rgba(0, 0, 0,.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 nav ul li ul li ul {
@@ -75,6 +90,74 @@ nav ul li ul li ul {
     top: 0;
 }
 
-nav ul li:hover > ul {
-    display: initial;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px); /* Высота без учета header */
+    padding-top: 60px;
+}
+
+.search-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.search-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.search-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для результатов поиска */
+.order-details {
+    text-align: left;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.order-details h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.order-details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.order-details p strong {
+    color: #333;
 }

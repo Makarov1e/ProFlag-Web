@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="../../static/main/css/contact.css" />
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">ProFlag</a>
+        <nav>
+            <ul>
+                <li><a href="/accounts/profile">Аккаунт</a></li>
+                <li><a href="/search">Отслеживание</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <div>
+            {% if user.is_authenticated %}
+                <p>Вы вошли как {{ user.get_username }}</p>
+            {% else %}
+                <a href="/accounts/login">Войти</a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="container">
+        <div class="contact-section">
+            <h1>Контакты</h1>
+            <p>Мы всегда рады помочь вам. Вы можете связаться с нами по любому из нижеуказанных способов.</p>
+            <div class="contact-info">
+                <p><strong>Сайт компании:</strong> <a href="https://www.proflag.ru">www.proflag.ru</a></p>
+                <p><strong>Телефоны:</strong></p>
+                <ul>
+                    <li><a href="tel:+74951281018">+7 (495) 128-10-18</a></li>
+                    <li><a href="tel:+78001001018">+7 (800) 100-10-18</a></li>
+                </ul>
+                <p><strong>Email:</strong> <a href="mailto:info@proflag.ru">info@proflag.ru</a></p>
+                <p><strong>График работы:</strong></p>
+                <ul>
+                    <li>пн–пт: 09:30 — 18:00</li>
+                    <li>сб–вс: выходной</li>
+                </ul>
+                <p><strong>Адрес:</strong></p>
+                <p>105275, г. Москва, ул. Уткина, д. 48, стр.4, 4 этаж</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

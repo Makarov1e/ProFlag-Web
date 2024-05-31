@@ -1,44 +1,48 @@
-{% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DropDown menu</title>
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-    <!--<img src="{% static 'main/img/logopf.png' %}" alt="logo">-->
+    <title>About Us</title>
+    <link rel="stylesheet" href="../../static/main/css/about.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header>
-        <a href="#" class="logo">ProFlag</a>
+    <header>
+        <a href="/" class="logo">ProFlag</a>
         <nav>
             <ul>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Tracking &bigtriangledown; </a>
-                <ul>
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">JavaScript &bigtriangledown; </a>
-                        <ul>
-                            <li><a href="#">123</a></li>
-                            <li><a href="#">228</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+                <li><a href="/accounts/profile">Аккаунт</a></li>
+                <li><a href="/search">Отслеживание</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/contact">Контакты</a></li>
             </ul>
         </nav>
-
-</header>
-    <!--<main>
-        {% block content %}
-        {% endblock %}
-    </main>-->
+        <div>
+            {% if user.is_authenticated %}
+                <p>Вы вошли как {{ user.get_username }}</p>
+            {% else %}
+                <a href="/accounts/login">Войти</a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="container">
+        <div class="about-section">
+            <h1>О нас</h1>
+            <p>Компания ProFlag занимается производством и продажей флагов и флагштоков. Мы стремимся к качеству и удовлетворению потребностей наших клиентов.</p>
+            <p>Наши продукты используются в различных сферах: от государственных учреждений до спортивных мероприятий и корпоративных офисов.</p>
+            <p>Мы гордимся тем, что предлагаем продукцию высокого качества и обеспечиваем отличный сервис нашим клиентам.</p>
+            <div class="mission-vision">
+                <div class="mission">
+                    <h2>Наша миссия</h2>
+                    <p>Предоставлять высококачественные флаги и флагштоки, удовлетворяя потребности наших клиентов и способствуя их успеху.</p>
+                </div>
+                <div class="vision">
+                    <h2>Наше видение</h2>
+                    <p>Стать лидером на рынке производства флагов, известным за качество, инновации и безупречное обслуживание клиентов.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
